@@ -66,7 +66,6 @@ class NumberAndChineseTranslator: NSObject {
         let replacedString = string.replacingOccurrences(of: "两", with: "二")
         var str = replacedString.trimmingCharacters(in: CharacterSet.whitespaces) + "个" as NSString
         for i in 0..<bigUnitArr.count {
-            print(bigUnitArr[bigUnitArr.count - 1 - i])
             if (str as String).range(of: bigUnitArr[bigUnitArr.count - 1 - i]) != nil {
                 let index = str.range(of: bigUnitArr[bigUnitArr.count - 1 - i]).location
                 let subString = str.substring(with: NSMakeRange(0, index))
