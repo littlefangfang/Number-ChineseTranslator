@@ -21,7 +21,7 @@ class NumberAndChineseTranslator: NSObject {
     /// - Parameter string: 需要转化的数字字符串
     /// - Returns: 转化成的文字
     func translateToChinese(in string: String) -> String {
-        let originString = string as NSString
+        let originString = string.trimmingCharacters(in: CharacterSet.whitespaces) as NSString
         var replaceArr = [String]()
         
         for i in 0..<originString.length {
@@ -63,7 +63,8 @@ class NumberAndChineseTranslator: NSObject {
     /// - Returns: 转换后的数字
     func translateToNumber(in string: String) -> Int {
         var resultNum = 0
-        var str = string + "个" as NSString
+        let replacedString = string.replacingOccurrences(of: "两", with: "二")
+        var str = replacedString.trimmingCharacters(in: CharacterSet.whitespaces) + "个" as NSString
         for i in 0..<bigUnitArr.count {
             print(bigUnitArr[bigUnitArr.count - 1 - i])
             if (str as String).range(of: bigUnitArr[bigUnitArr.count - 1 - i]) != nil {
