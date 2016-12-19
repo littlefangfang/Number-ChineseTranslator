@@ -1,2 +1,2 @@
 # Number-ChineseTranslator
-a translator between number and Chinese written with swift
+a converter between number and Chinese written in swift
